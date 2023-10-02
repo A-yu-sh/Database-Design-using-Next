@@ -1,11 +1,8 @@
 import mongoose from "mongoose";
 
 const IdentitySchema = new mongoose.Schema({
-  Name: String,
-  Course: String,
-  FatherName: String,
-  MotherName: String,
-  PhoneNo: Number,
+  task: String,
+  desc: String,
 });
 
 const IdentityModel =

@@ -1,4 +1,4 @@
-"use client";
+import Input from "./Components/Input";
 import { GET_IDENTITY } from "./api/AccessDB/route";
 
 export default async function Home() {
@@ -6,15 +6,11 @@ export default async function Home() {
   return (
     <main>
       <h1 className="mt-5 text-xl flex justify-center">Identity Database</h1>
-      <button onClick={() => signIn("google")}> Sign In</button>
+      <Input />
       <h2>
         {data &&
           data.data.map((elem) => {
-            return (
-              <div key={elem._id}>
-                Name : {elem?.Name} || {elem?.Course}
-              </div>
-            );
+            return <div key={elem._id}>Task : {elem?.task}</div>;
           })}
       </h2>
     </main>
