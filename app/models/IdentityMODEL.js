@@ -9,7 +9,7 @@ const IdentitySchema = new mongoose.Schema({
 });
 
 const IdentityModel =
-  mongoose.model.Identity_Details ||
+  mongoose.models.Identity_Details ||
   mongoose.model("Identity_Details", IdentitySchema);
 
 export default IdentityModel;
