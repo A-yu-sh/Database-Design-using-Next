@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { useRouter } from "next/navigation";
 
 const Input = () => {
   const [task, setTask] = React.useState("");
@@ -14,12 +15,14 @@ const Input = () => {
     try {
       const res = await fetch("http://localhost:3000/api/Data", {
         method: "POST",
-
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ task, desc }),
       });
+
+      if (res.ok) {
+        setDesc("");
+        setTask("");
+      }
     } catch (error) {
       console.log(error);
     }
