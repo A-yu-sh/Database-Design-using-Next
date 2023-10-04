@@ -6,14 +6,14 @@ import { useSession } from "next-auth/react";
 
 export default function Home() {
   // const data = await GET_IDENTITY();
-  const { status } = useSession();
-  console.log(status);
+  const { status, data: session } = useSession();
+
   return (
     <main>
       <h1 className="mt-5 text-xl flex justify-center">Identity Database</h1>
       <Input />
       {status === "authenticated" ? (
-        <button onClick={() => signOut("google")}>sign Out</button>
+        <p>{session.user.name}</p>
       ) : (
         <button onClick={() => signIn("google")}>sign In</button>
       )}
