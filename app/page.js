@@ -10,7 +10,7 @@ export default function Home() {
 
   return (
     <main>
-      <h1 className="mt-5 text-xl flex justify-center">Listing id</h1>
+      <h1 className="mt-5 text-xl flex justify-center">Listing</h1>
       <Input />
       {status === "authenticated" ? (
         <p>{session.user.name}</p>
