@@ -45,6 +45,7 @@ const Input = () => {
         onChange={(e) => setDesc(e.target.value)}
         required
       />
+
       <button className="bg-gray-300 p-2 rounded-lg" onClick={HandleSubmit}>
         Publish
       </button>

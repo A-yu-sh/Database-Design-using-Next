@@ -1,7 +1,5 @@
 import Input from "./Components/Input";
 import { GET_IDENTITY } from "./api/AccessDB/route";
-import { signIn, signOut } from "next-auth/react";
-import { useSession } from "next-auth/react";
 
 export default async function Home() {
   const data = await GET_IDENTITY();
@@ -12,7 +10,7 @@ export default async function Home() {
       <Input />
       {data.data &&
         data.data.map((e) => {
-          return <div>{e.task}</div>;
+          return <div key={e._id}>{e.task}</div>;
         })}
     </main>
   );
