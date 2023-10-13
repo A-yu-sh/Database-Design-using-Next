@@ -4,3 +4,10 @@ export async function GET_IDENTITY() {
   });
   return response.json();
 }
+
+export async function GET_AGGREGATION() {
+  const response = await fetch("http://localhost:3000/api/aggregation", {
+    cache: "no-store",
+  });
+  return response.json();
+}
